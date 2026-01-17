@@ -4,15 +4,8 @@ from .models import Todo
 
 def todo_list(request):
     todos = Todo.objects.all()
-    response = ""
-
-    for todo in todos:
-        status = "Done" if todo.is_completed else "Not done"
-        response += f"{todo.title} - {status}/n"
-
-
-    return HttpResponse(response)
-
+   
+    return render(request, 'todoapp/base.html')
 
 
 def pending_todos(request):
