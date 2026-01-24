@@ -5,7 +5,7 @@
 <h2 class="mb-3">My Todos</h2>
 
 {% if todos %}
-
+    <a href="{% url 'add_todo' %}" class="btn btn-success mb-3">➕ Add Todo </a>    
 <ul class="list-group">
     {% for todo in todos %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
