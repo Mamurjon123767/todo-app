@@ -12,14 +12,13 @@ def todo_list(request):
 
 def pending_todos(request):
     todos = Todo.objects.filter(is_completed = False)
-    response = ""
+    return render(request, 'todoapp/pending_todos.html', {'todos': todos})
 
-    for todo in todos:
-        response +=f"{todo.title}/n{todo.priority}/n{todo.due_date}/n"
+    
 
-    return HttpResponse(response)
-
-
+def completed_todos(request):
+    todos = Todo.objects.filter(is_completed = False)
+    return render(request, 'todoapp/completed_todos.html', {'todos': todos})
 
 
 def completed_todos(request):

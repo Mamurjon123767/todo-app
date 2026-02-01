@@ -10,18 +10,17 @@
 
 
     <nav class="navbar navbar-dark bg-dark mb-4">
-        <div class="container">
-            <span class="navbar-brand"> Todo App</span>
-        </div>
-    </nav>
-
-    <div class="container">
+            <div class="container">
+                <a href="{% url 'add_todo'%}" class="navbar-brand">Todo App</a>
+                <div>
+                    <a href="{% url 'completed_todos' %}" class = "btn btn-success mb-3">Completed</a>
+                    <a href="{% url 'pending_todos' %}" class="btn btn-warning mb-3">Completed</a>
+                </div>
+            </div>
+    </nav
+    <div class="container">      
         {% block content %}
         {% endblock %}
     </div>
     </body>
-
-   
-
-
 </html>
