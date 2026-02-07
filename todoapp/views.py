@@ -1,21 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from .forms import TodoForm
 
 from .models import Todo
-
+@login_required
 def todo_list(request):
     todos = Todo.objects.all()
    
     return render(request, 'todoapp/todo_list.html', {'todos': todos})
 
-
+@login_required
 def pending_todos(request):
     todos = Todo.objects.filter(is_completed = False)
     return render(request, 'todoapp/pending_todos.html', {'todos': todos})
 
     
-
+@login_required
 def completed_todos(request):
     todos = Todo.objects.filter(is_completed = False)
     return render(request, 'todoapp/completed_todos.html', {'todos': todos})
