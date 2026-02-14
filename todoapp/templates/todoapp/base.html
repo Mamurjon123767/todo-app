@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-dark bg-dark mb-4">
             <div class="container">
-                <a href="{% url 'add_todo'%}" class="navbar-brand">Todo App</a>
+                <a href="{% url 'todo_list'%}" class="navbar-brand">Todo App</a>
                 <div>
                     <a href="{% url 'completed_todos' %}" class = "btn btn-success mb-3">Completed</a>
                     <a href="{% url 'pending_todos' %}" class="btn btn-warning mb-3">Completed</a>
@@ -23,7 +23,7 @@
                 <a href="{% url 'logout' %}" class="btn btn-outline-light btn-sm">Logout</a>
 
                 {% else %}
-                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">loging</a>
+                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">Login</a>
                 <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">Register</a>
 
                 {% endif %}
